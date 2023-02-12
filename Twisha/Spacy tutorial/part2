@@ -1,0 +1,88 @@
+from google.colab import files
+uploaded = files.upload()
+
+from google.colab import files
+uploaded = files.upload()
+
+import spacy
+
+!python -m spacy download en_core_web_md
+
+nlp = spacy.load("en_core_web_md")
+
+text = open("The Mississippi River.txt")
+text.read()
+
+text2 = open("wiki_us.txt")
+text2.read()
+
+file1 = open('The Mississippi River.txt','r')
+
+text = file1.read()
+
+file1.close()
+
+print(text)
+
+file2 = open('wiki_us.txt','r')
+
+text2 = file2.read()
+
+file2.close()
+
+print(text2)
+
+doc = nlp(text)
+
+doc2 = nlp(text2)
+
+sentence1 = list(doc.sents)[0]
+print(sentence1)
+
+sentence2 = list(doc2.sents)[0]
+print(sentence2)
+
+import numpy as np
+your_word = "chief"
+
+ms = nlp.vocab.vectors.most_similar(
+    np.asarray([nlp.vocab.vectors[nlp.vocab.strings[your_word]]]), n=10)
+words = [nlp.vocab.strings[w] for w in ms[0][0]]
+distances = ms[2]
+print(words)
+
+your_word = "country"
+
+ms = nlp.vocab.vectors.most_similar(np.asarray([nlp.vocab.vectors[nlp.vocab.strings[your_word]]]), n=10)
+words = [nlp.vocab.strings[w] for w in ms[0][0]]
+distances = ms[2]
+print(words)
+
+doc1 = nlp("I like salty fries and hamburgers.")
+doc2 = nlp("Fast food tastes very good.")
+
+# Similarity of two documents
+print(doc1, "<->", doc2, doc1.similarity(doc2))
+
+# Similarity of tokens and spans
+salty_fries = doc1[2:4]
+hamburgers = doc1[5]
+print(salty_fries, "<->", hamburgers, salty_fries.similarity(hamburgers))
+
+doc3 = nlp("salty fries")
+doc4 = nlp("french fries")
+doc5 = nlp("apple")
+print(doc3, "<->", doc4, doc3.similarity(doc4))
+print("\n", doc3, "<->", doc5, doc3.similarity(doc5))
+print("\n", doc4, "<->", doc5, doc4.similarity(doc5))
+
+nlp2 = spacy.blank("en")
+
+nlp2.add_pipe("sentencizer")
+
+nlp2.analyze_pipes()
+
+nlp3 = spacy.load("en_core_web_sm")
+
+nlp3.analyze_pipes()
+
