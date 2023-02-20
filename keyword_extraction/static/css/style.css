@@ -204,3 +204,9 @@ body{
     margin: 0px 10px;
 }
 
+#algo > h5{
+    font-family: 'Phudu' , cursive;
+}
+#algo > p,ul,li{
+    font-family: 'Courier New', Courier, monospace;
+}
