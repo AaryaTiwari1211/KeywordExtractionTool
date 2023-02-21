@@ -6,15 +6,15 @@ var urlbtn = document.getElementById('urlbtn')
 var webbtn = document.getElementById('webbtn')
 
 textbtn.onclick = () => {
-    textinput.innerHTML = '<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter text" name="text-input" rows="7"></textarea>'
+    textinput.innerHTML = '<textarea class="form-control" name="text-input" id="exampleFormControlTextarea1" placeholder="Enter text" name="text-input" rows="7"></textarea>'
     left_heading.innerHTML = 'INPUT TEXT HERE'
 }
 urlbtn.onclick = () => {
-    textinput.innerHTML = '<input class="form-control" type="text" placeholder="Enter URL" name="url-input">'
+    textinput.innerHTML = '<input class="form-control" type="text" name="url-input" placeholder="Enter URL" name="url-input">'
     left_heading.innerHTML = 'INPUT URL HERE'
 }
 webbtn.onclick = () => {
-    textinput.innerHTML = '<input type="file" class="form-control-file" id="exampleFormControlFile1" name="file-input" placeholder="Attach File">'
+    textinput.innerHTML = '<input type="file" class="form-control-file" name="file-input" id="exampleFormControlFile1" name="file-input" placeholder="Attach File">'
     left_heading.innerHTML = 'INPUT FILE HERE'
 }
 

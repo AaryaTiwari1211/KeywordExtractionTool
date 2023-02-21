@@ -6,12 +6,10 @@ button.onclick = () => {
     {
         divelement.style.display = "none";
         button.innerHTML = "View More"
-        
     } 
     else 
     {
         divelement.style.display = "block";
         button.innerHTML = "View Less"
     }
-    
 }
