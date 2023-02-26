@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+/* For Navbar */
+@media (min-width:990px){
+    #navbar-items1 .nav-link{
+        margin: 0px 30px;
+        transition: all 0.6s ease;
+    }
+    #navbar-items1 .nav-link{
+        font-family: 'Julee', serif;
+        font-size: 20px;
+        letter-spacing: 1px;    
+        color: #16a085;
+        transition: all 0.6s ease;
+        position: relative;
+    }
+    #navbar-items1 .nav-link::after,
+    #navbar-items1 .nav-link::before{
+        content: '';
+        display:block;
+        position:absolute;
+        width: 20%;
+        height: 20%;
+        border: 2px solid;
+        transition: all 0.6s ease;
+        border-radius: 2px;
+    }
+    #navbar-items1 .nav-link::after{
+        bottom: 0;
+        right: 0;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: #566473;
+        border-right-color: #566473;
+    }
+    #navbar-items1 .nav-link::before{
+        top: 0;
+        left: 0;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-top-color: #566473;
+        border-left-color: #566473;
+    }
+    #navbar-items1 .nav-link:hover::after,
+    #navbar-items1 .nav-link:hover::before
+    {
+        width: 100%;
+        height: 100%;
+    }
+    #navbar-items2 .nav-link{
+        transition: all 0.2s ease;
+    }
+    #navbar-items2   .nav-link:hover{
+        animation-name:spin;
+        animation-duration: 2s;
+    }
+    .nav-link i{
+        font-size: 20px;
+        margin: 0px 10px;
+        padding: 15px;
+        transition: all 0.5s ease;
+        border-radius:100%;
+    }
+    .nav-link i:hover{
+        color: white;
+    }
+    .bi-instagram:hover{
+        background-color: red;
+    }
+    .bi-github:hover{
+        background-color: green;
+    }
+    .bi-bar-chart-fill:hover{
+        background-color: orange;
+    }
+    .bi-layout-text-sidebar:hover{
+        background-color: blue;
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate3d(0,1,0,0deg);
+    }
+    100% {
+        transform: rotate3d(0,1,0,360deg);
+    }
+}
+/* Home Page */
+#info-text{
+    margin: 20px;
+}
+#info-text h2{
+    text-align: center;
+    font-family: 'Phudu' , cursive;
+    margin: 30px 0px;
+}
+#info-text p{
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#tool h2{
+    text-align: center;
+    font-family: 'Phudu' , cursive;
+}
+#showhide{
+    display: none;  
+}
+#viewmore {
+    font-size: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin:10px;
+}
+.view{
+    width:100%;
+    text-align: center;
+}
+#about-tool h2{
+    text-align: center;
+    font-family: 'Phudu' , cursive;
+    margin: 30px 0px;
+}
+#about-tool .card:hover
+{
+    box-shadow: 5px 5px #566473;
+}
+#about-tool .card-title{
+    text-align: center;
+    font-family: 'Phudu' , cursive;
+}
+#about-tool .card-text{
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#about-tool .col{
+    text-align: -moz-center;
+    margin:5px;
+}
+
+/* Tool */
+#tool h4{
+    font-family: 'Phudu' , cursive;
+}
+#tool h2 {
+    margin: 30px;
+}
+#tool .col-sm .btn{
+    position: relative;
+    transition: 0.5s;
+}
+
+#text_title {
+    margin-bottom: 10px;
+    }
+
+#extractbtn,
+#urlbtn,
+#textbtn,
+#webbtn{
+    margin: 10px 0;
+}
+
+#tool .col-sm .btn::before,
+#tool .col-sm .btn::after {
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: gainsboro;
+    border-radius: 50%;
+    transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+    top: calc(50% - 0.6em / 2);
+}
+#tool .col-sm .btn::before {left: 0; z-index: -1;}
+#tool .col-sm .btn::after {right: 0; z-index: -2;}
+
+#tool .col-sm .btn:hover {
+    color: white;
+}
+
+#tool .col-sm .btn:hover::before,
+#tool .col-sm .btn:hover::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: dodgerblue;
+}
+
+#tool .col-sm .btn:hover::before {
+    top: 0;
+}
+
+#tool .col-sm .btn:hover::after {
+    right: -0.4em;
+    filter: brightness(0.8);
+}
+.align-items-center > div:nth-child(2) > button:nth-child(1),
+.align-items-center > div:nth-child(2) > button.btn:nth-child(2),
+.align-items-center > div:nth-child(2) > button.btn:nth-child(3), 
+.align-items-center > div:nth-child(2) > button.btn:nth-child(4)
+{
+    margin: 0px 10px;
+}
+
+#algo > h5{
+    font-family: 'Phudu' , cursive;
+}
+#algo > p,ul,li{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
