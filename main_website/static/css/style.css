@@ -6,82 +6,104 @@ body{
     height: 100vh;
 }
 /* For Navbar */
-@media (min-width:990px){
+@media (max-width:1199px)
+{
     #navbar-items1 .nav-link{
-        margin: 0px 30px;
-        transition: all 0.6s ease;
+        width: 10%;
+        text-align: center;
+        font-size: 12px;
     }
-    #navbar-items1 .nav-link{
-        font-family: 'Julee', serif;
-        font-size: 20px;
-        letter-spacing: 1px;    
-        color: #16a085;
-        transition: all 0.6s ease;
-        position: relative;
+    #navbar-link5 {
+        margin: 0;
     }
-    #navbar-items1 .nav-link::after,
-    #navbar-items1 .nav-link::before{
-        content: '';
-        display:block;
-        position:absolute;
-        width: 20%;
-        height: 20%;
-        border: 2px solid;
-        transition: all 0.6s ease;
-        border-radius: 2px;
+    #navbar-items1 .nav-item{
+        text-align: -webkit-center;
     }
-    #navbar-items1 .nav-link::after{
-        bottom: 0;
-        right: 0;
-        border-top-color: transparent;
-        border-left-color: transparent;
-        border-bottom-color: #566473;
-        border-right-color: #566473;
+    #navbar-items2 .nav-item{
+        text-align: -webkit-center;
     }
-    #navbar-items1 .nav-link::before{
-        top: 0;
-        left: 0;
-        border-bottom-color: transparent;
-        border-right-color: transparent;
-        border-top-color: #566473;
-        border-left-color: #566473;
-    }
-    #navbar-items1 .nav-link:hover::after,
-    #navbar-items1 .nav-link:hover::before
-    {
-        width: 100%;
-        height: 100%;
-    }
+
     #navbar-items2 .nav-link{
-        transition: all 0.2s ease;
-    }
-    #navbar-items2   .nav-link:hover{
-        animation-name:spin;
-        animation-duration: 2s;
-    }
-    .nav-link i{
-        font-size: 20px;
-        margin: 0px 10px;
-        padding: 15px;
-        transition: all 0.5s ease;
-        border-radius:100%;
-    }
-    .nav-link i:hover{
-        color: white;
-    }
-    .bi-instagram:hover{
-        background-color: red;
-    }
-    .bi-github:hover{
-        background-color: green;
-    }
-    .bi-bar-chart-fill:hover{
-        background-color: orange;
-    }
-    .bi-layout-text-sidebar:hover{
-        background-color: blue;
+        width:10%;
     }
 }
+#navbar-items1 .nav-link{
+    margin: 0px 30px;
+    transition: all 0.6s ease;
+}
+
+#navbar-items1 .nav-link{
+    font-family: 'Julee', serif;
+    font-size: 20px;
+    letter-spacing: 1px;    
+    color: #16a085;
+    transition: all 0.6s ease;
+    position: relative;
+}
+#navbar-items1 .nav-link::after,
+#navbar-items1 .nav-link::before{
+    content: '';
+    display:block;
+    position:absolute;
+    width: 20%;
+    height: 20%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px;
+}
+#navbar-items1 .nav-link::after{
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #566473;
+    border-right-color: #566473;
+}
+#navbar-items1 .nav-link::before{
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #566473;
+    border-left-color: #566473;
+}
+#navbar-items1 .nav-link:hover::after,
+#navbar-items1 .nav-link:hover::before
+{
+    width: 100%;
+    height: 100%;
+}
+#navbar-items2 .nav-link{
+    transition: all 0.2s ease;
+}
+#navbar-items2   .nav-link:hover{
+    animation-name:spin;
+    animation-duration: 2s;
+}
+
+.nav-link i{
+    font-size: 20px;
+    margin: 0px 10px;
+    padding: 15px;
+    transition: all 0.5s ease;
+    border-radius:100%;
+}
+.nav-link i:hover{
+    color: white;
+}
+.bi-instagram:hover{
+    background-color: red;
+}
+.bi-github:hover{
+    background-color: green;
+}
+.bi-bar-chart-fill:hover{
+    background-color: orange;
+}
+.bi-layout-text-sidebar:hover{
+    background-color: blue;
+}
+
 @keyframes spin {
     0% {
         transform: rotate3d(0,1,0,0deg);
@@ -154,7 +176,9 @@ body{
     position: relative;
     transition: 0.5s;
 }
-
+table, th, td {
+    border: 1px solid black;
+}
 #text_title {
     margin-bottom: 10px;
     }
@@ -215,4 +239,32 @@ body{
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* NLP */
+.scrollspy-example p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: 400;
+}
 
+#link1,
+#link2,
+#link3,
+#link4{
+    text-decoration: none;
+    text-align: start;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 15px;
+    color: black;
+}
+
+#link1:hover,
+#link2:hover,
+#link3:hover,
+#link4:hover{
+    color: green;
+}
+
+#main_content{
+    margin-top: 30px;
+}

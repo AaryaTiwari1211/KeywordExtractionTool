@@ -14,7 +14,7 @@ def tool(request):
         new_text = Text(text_title=text_title,text_data=text_data)
         new_text.save()
         keywords = extract_keywords(text_data)
-        messages.success(request, f'Your text has been added to the database!')
+        messages.success(request, f'Your text has been processed and keywords are in the right ->!')
     return render(request, 'main/tool.html',{'keywords': keywords})
 
 

@@ -1,5 +1,174 @@
-{%extends 'main/index.html'%}
-{%load static%}
-{% block content%}
+{%extends 'main/index.html'%} {%load static%} {% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center sticky-sm-top">
+                <a class="p-1 rounded" id="link1" href="#simple-list-item-1">What is NLP</a>
+                <a class="p-1 rounded" id="link2" href="#simple-list-item-2">Real Life Applications of NLP</a>
+                <a class="p-1 rounded" id="link3" href="#simple-list-item-3">How to Implement NLP</a>
+                <a class="p-1 rounded" id="link4" href="#simple-list-item-4">Some Common Projects Related to NLP</a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0"
+                data-bs-smooth-scroll="true" id="main_content" class="scrollspy-example" tabindex="0">
+                <h1 id="simple-list-item-1">What is NLP</h1>
+                <p>Natural language processing strives to build machines that understand and respond to text or voice
+                    data—and respond with text or speech of their own—in much the same way humans do.
+                    <br>
+                    <br>
+                    Natural language processing (NLP) refers to the branch of computer science—and more specifically,
+                    the
+                    branch of artificial intelligence or AI—concerned with giving computers the ability to understand
+                    text
+                    and spoken words in much the same way human beings can.
+                    <br>
+                    <br>
+                    NLP combines computational linguistics—rule-based modeling of human language—with statistical,
+                    machine
+                    learning, and deep learning models. Together, these technologies enable computers to process human
+                    language in the form of text or voice data and to ‘understand’ its full meaning, complete with the
+                    speaker or writer’s intent and sentiment.
+                    <br>
+                    <br>
+                    NLP drives computer programs that translate text from one language to another, respond to spoken
+                    commands, and summarize large volumes of text rapidly—even in real time. There’s a good chance
+                    you’ve
+                    interacted with NLP in the form of voice-operated GPS systems, digital assistants, speech-to-text
+                    dictation software, customer service chatbots, and other consumer conveniences. But NLP also plays a
+                    growing role in enterprise solutions that help streamline business operations, increase employee
+                    productivity, and simplify mission-critical business processes.
+                </p>
+                <h1 id="simple-list-item-2">Real Life Applications of NLP</h1>
+                <p>
+                    <b><u>Spam detection:</u></b> You may not think of spam detection as an NLP solution, but the best
+                    spam detection
+                    technologies use NLP's text classification capabilities to scan emails for language that often
+                    indicates
+                    spam or phishing. These indicators can include overuse of financial terms, characteristic bad
+                    grammar,
+                    threatening language, inappropriate urgency, misspelled company names, and more. Spam detection is
+                    one
+                    of a handful of NLP problems that experts consider 'mostly solved' (although you may argue that this
+                    doesn’t match your email experience).
+                    <br>
+                    <br>
+                    <b><u>Machine translation:</u></b> Google Translate is an example of widely available NLP technology
+                    at work. Truly
+                    useful machine translation involves more than replacing words in one language with words of another.
+                    Effective translation has to capture accurately the meaning and tone of the input language and
+                    translate
+                    it to text with the same meaning and desired impact in the output language. Machine translation
+                    tools
+                    are making good progress in terms of accuracy. A great way to test any machine translation tool is
+                    to
+                    translate text to one language and then back to the original. An oft-cited classic example: Not long
+                    ago, translating “The spirit is willing but the flesh is weak” from English to Russian and back
+                    yielded
+                    “The vodka is good but the meat is rotten.” Today, the result is “The spirit desires, but the flesh
+                    is
+                    weak,” which isn’t perfect, but inspires much more confidence in the English-to-Russian translation.
+                    <br>
+                    <br>
+                    <b><u>Virtual agents and chatbots:</u></b> Virtual agents such as Apple's Siri and Amazon's Alexa
+                    use speech
+                    recognition to recognize patterns in voice commands and natural language generation to respond with
+                    appropriate action or helpful comments. Chatbots perform the same magic in response to typed text
+                    entries. The best of these also learn to recognize contextual clues about human requests and use
+                    them to
+                    provide even better responses or options over time. The next enhancement for these applications is
+                    question answering, the ability to respond to our questions—anticipated or not—with relevant and
+                    helpful
+                    answers in their own words.
+                </p>
+                <h1 id="simple-list-item-3">How to Implement NLP</h1>
+                <p>
+                    <b><u>1. Sentiment Analysis</u></b><br>
+                    <br>
+                    Sentiment Analysis is one of the most popular NLP techniques that involves taking a piece of text
+                    (e.g., a comment, review, or a document) and determines whether data is positive, negative, or
+                    neutral. It has many applications in healthcare, customer service, banking, etc.
+                    <br>
+                    <br>
+                    <b><u>2. Named Entity Recognition (NER)</u></b><br>
+                    <br>
+                    Named Entity Recognition is a technique used to locate and classify named entities in text into
+                    categories such as persons, organizations, locations, expressions of times, quantities, monetary
+                    values, percentages, etc. It‘s used for optimizing search engine algorithms, recommendation systems,
+                    customer support, content classification, etc.
+                    <br>
+                    <br>
+                    <b><u>3. Stemming & Lemmatization</u></b><br>
+                    <br>
+                    Stemming and lemmatization are 2 popular techniques in NLP. Both normalizes a word but in different
+                    ways.
+                    <br>
+                    <br>
+                    <b><u>Stemming:</u></b> It truncates a word to its stem word. For example, the words “friends,”
+                    “friendship,”
+                    “friendships” will be reduced to “friend.” Stemming may not give us a dictionary, grammatical word
+                    for a particular set of words.
+                    <br>
+                    <br>
+                    <b><u>Lemmatization:</u></b> Unlike the stemming technique, lemmatization finds the dictionary word
+                    instead of
+                    truncating the original word. Lemmatization algorithms extract the correct lemma of each word, so
+                    they often require a dictionary of the language to be able to categorize each word correctly.
+                </p>
+                <h1 id="simple-list-item-4">Some Common Projects using NLP</h1>
+                <p>
+                    <b><u>1. A Customer Support Bot</u></b><br>
+                    <br>
+                    One of the best ideas to start experimenting you hands-on NLP projects for students is working on
+                    customer support bot. A conventional chatbot answers basic customer queries and routine requests
+                    with canned responses. But these bots cannot recognize more nuanced questions. So, support bots are
+                    now equipped with artificial intelligence and machine learning technologies to overcome these
+                    limitations. In addition to understanding and comparing user inputs, they can generate answers to
+                    questions on their own without pre-written responses.
+                    <br>
+                    <br>
+                    For example, Reply.ai has built a custom ML-powered bot to provide customer support. According to
+                    the company, an average organization can take care of almost 40 % of its inbound support requests
+                    with their tool. Now, let us describe the model required to implement a project inspired by this
+                    product.
+                    <br>
+                    <br>
+                    You can use Microsoft's DialoGPT, which is a pre-trained dialogue response generation model. It
+                    extends the systems of PyTorch Transformers (from Hugging Face) and GPT-2 (from OpenAI) to return
+                    answers to the text queries entered. You can run an entire DialoGPT deployment with Cortex. There
+                    are several repositories available online for you to clone. Once you have deployed the API, connect
+                    it to your front-end UI, and enhance your customer service efficiency!
+                    <br>
+                    <br>
+                    <b><u>2. A Language Identifier</u></b><br>
+                    <br>
+                    Have you noticed that Google Chrome can detect which language in which a web page is written? It can
+                    do so by using a language identifier based on a neural network model.
+                    <br>
+                    <br>
+                    This is an excellent NLP projects for beginners. The process of determining the language of a
+                    particular body of text involves rummaging through different dialects, slangs, common words between
+                    different languages, and the use of multiple languages in one page. But with machine learning, this
+                    task becomes a lot simpler.
+                    <br>
+                    <br>
+                    You can construct your own language identifier with the fastText model by Facebook. The model is an
+                    extension of the word2vec tool and uses word embeddings to understand a language. Here, word vectors
+                    allow you to map a word based on its semantics — for instance, upon subtracting the vector for
+                    “male” from the vector for “king” and adding the vector for “female,” you will end up with the
+                    vector for “queen.”
+                    <br>
+                    <br>
+                    A distinctive characteristic of fastText is that it can understand obscure words by breaking them
+                    down into n-grams. When it is given an unfamiliar word, it analyzes the smaller n-grams, or the
+                    familiar roots present within it to find the meaning. Deploying fastTExt as an API is quite
+                    straightforward, especially when you can take help from online repositories.
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {%endblock%}

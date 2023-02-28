@@ -65,12 +65,19 @@
                     <h2 id="analysisheading">TOPIC MODEL</h2>
                 </div>
                 <div class="row">
-                    <ul>
+
+                    <table>
+                        <tr>
+                            <th>Sr no.</th>
+                            <th>Keyword</th>
+                        </tr>
                         {%for item in keywords%}
-                            <li>{{ item }}</li>
-                            <br>
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{item}}</td>
+                            </tr>
                         {%endfor%}
-                    </ul>
+                    </table>
                 </div>
             </div>
         </div>
