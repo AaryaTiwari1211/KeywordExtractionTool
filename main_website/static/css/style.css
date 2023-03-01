@@ -26,6 +26,9 @@ body{
     #navbar-items2 .nav-link{
         width:10%;
     }
+    #main_content p{
+        font-weight: 550;
+    }
 }
 #navbar-items1 .nav-link{
     margin: 0px 30px;
@@ -243,7 +246,7 @@ table, th, td {
 .scrollspy-example p{
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
-    font-weight: 400;
+    color: black;
 }
 
 #link1,
@@ -267,4 +270,7 @@ table, th, td {
 
 #main_content{
     margin-top: 30px;
+}
+#main_content p{
+    font-weight: 550;
 }
