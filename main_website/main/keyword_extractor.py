@@ -9,21 +9,27 @@ import numpy as np
 import pandas as pd
 import networkx as nx
 from nltk.sentiment import SentimentIntensityAnalyzer
+from wordcloud import WordCloud, STOPWORDS
+from PIL import Image
 
-def build_vocabulary(page:list) -> list:
+stopw = set(STOPWORDS)
+
+
+def build_vocabulary(page: list) -> list:
     '''
     Builds vocabulary with all the words
     present in the list page.
     '''
     vocab = list(set(page))
     vocab.sort()
-    
+
     vocab_dict = {}
     for index, word in enumerate(vocab):
         vocab_dict[word] = index
     return vocab_dict
 
-def build_context(page:str, co_ocurrence_vectors: pd.DataFrame) -> pd.DataFrame:
+
+def build_context(page: str, co_ocurrence_vectors: pd.DataFrame) -> pd.DataFrame:
     for index, element in enumerate(page):
 
         start = 0 if index-2 < 0 else index-2
@@ -31,15 +37,17 @@ def build_context(page:str, co_ocurrence_vectors: pd.DataFrame) -> pd.DataFrame:
 
         context = page[start:index]+page[index+1:finish]
         for word in context:
-            co_ocurrence_vectors.loc[element, word] = (co_ocurrence_vectors.loc[element, word]+1)
-            
+            co_ocurrence_vectors.loc[element, word] = (
+                co_ocurrence_vectors.loc[element, word]+1)
+
     return co_ocurrence_vectors
 
-def extract_keywords(text):
-    print(text);
-    nlp=spacy.load("en_core_web_sm")
 
-    doc=nlp(text)
+def extract_keywords(text):
+    print(text)
+    nlp = spacy.load("en_core_web_sm")
+
+    doc = nlp(text)
     doc
 
     len(text)
@@ -47,19 +55,17 @@ def extract_keywords(text):
     len(doc)
 
     for ent in doc.ents:
-     print(ent.text,ent.label_)
+        print(ent.text, ent.label_)
 
-    stopwords=[w for w in doc if w.is_stop==True]
+    stopwords = [w for w in doc if w.is_stop == True]
     stopwords
 
-    text2=[w for w in doc if w.is_stop==False  and w.pos_ != "PUNCT"]
+    text2 = [w for w in doc if w.is_stop == False and w.pos_ != "PUNCT"]
     text2
 
-    delimiters=[w for w in doc if w.pos_ == "PUNCT"]
-    delimiter=str(delimiters)
+    delimiters = [w for w in doc if w.pos_ == "PUNCT"]
+    delimiter = str(delimiters)
     delimiter
-
-
 
     text3 = " ".join([token.lemma_ for token in text2])
     print(text3)
@@ -67,15 +73,15 @@ def extract_keywords(text):
     keyword = str(text3).split()
     keyword
 
-    frequency=FreqDist(keyword)
+    frequency = FreqDist(keyword)
     print(frequency.most_common())
 
-    stopword=str(stopwords)
+    stopword = str(stopwords)
     stopword
 
     len(stopword)
 
-    st=stopword.split()
+    st = stopword.split()
     st
 
     keylist = []
@@ -88,9 +94,9 @@ def extract_keywords(text):
     vocab_dict2 = build_vocabulary(frequency.keys())
     print(vocab_dict2)
     co_ocurrence_vectors2 = pd.DataFrame(
-    np.zeros([len(vocab_dict2), len(vocab_dict2)]),
-    index = vocab_dict2.keys(),
-    columns = vocab_dict2.keys()
+        np.zeros([len(vocab_dict2), len(vocab_dict2)]),
+        index=vocab_dict2.keys(),
+        columns=vocab_dict2.keys()
     )
     print(co_ocurrence_vectors2)
 
@@ -108,9 +114,9 @@ def extract_keywords(text):
         frequency_str[i]
         print(frequency_str[16])
 
-    g=nx.Graph()
+    g = nx.Graph()
 
-    nodes=nlp(str(keylist))
+    nodes = nlp(str(keylist))
     nodes
 
     g.add_node(nodes)
@@ -119,9 +125,9 @@ def extract_keywords(text):
 
     nltk.download('punkt')
 
-    sia=SentimentIntensityAnalyzer()
+    sia = SentimentIntensityAnalyzer()
 
-    tokens=nltk.word_tokenize(text)
+    tokens = nltk.word_tokenize(text)
 
     scores = {}
     for token in tokens:
@@ -141,7 +147,6 @@ def extract_keywords(text):
 
     degree = {word: frequency[word] for word in set(tokens)}
 
-
     # Calculate the degree-to-frequency ratio for each token
     ratios = {}
     for word in degree:
@@ -156,7 +161,8 @@ def extract_keywords(text):
 
     degree
 
-    sorted_dict = {k: v for k, v in sorted(ratios.items(), key=lambda item: item[1],reverse=True)}
+    sorted_dict = {k: v for k, v in sorted(
+        ratios.items(), key=lambda item: item[1], reverse=True)}
     print('sorted: ')
     print(sorted_dict)
 
@@ -164,8 +170,20 @@ def extract_keywords(text):
     print('keywords to extract: ')
     print(keywords_to_extract)
 
-    sort= list(sorted_dict)
+    sort = list(sorted_dict)
     final = sort[:keywords_to_extract]
     print('final: ')
     print(final)
+    final_string = " ".join(str(item) for item in final)
+    print(final_string)
     return final
+
+def wordcloud_generator(text):
+    text = extract_keywords(text)
+    convert_text = " ".join(str(item) for item in text)
+    word_cloud = WordCloud(stopwords=stopw, background_color="white", max_words=100,
+    contour_width=3, contour_color='steelblue', width=800, height=400, max_font_size=100, min_font_size=10, random_state=42
+    ).generate(convert_text)
+    # img = word_cloud.to_image()
+    img = word_cloud.to_file("media/images/wordcloud.png")
+    return img

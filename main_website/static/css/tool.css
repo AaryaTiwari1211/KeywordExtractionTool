@@ -1,0 +1,9 @@
+#topicmodel{
+    display: none;
+}
+
+#topic-model-content{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}

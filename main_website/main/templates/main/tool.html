@@ -1,4 +1,10 @@
-{%extends 'main/index.html'%} {%load static%} {% block content%}
+{%extends 'main/index.html'%}
+{%load static%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/tool.css' %}" />
+{% endblock css %}
+{% block content%}
+
 
 <section id="tool">
     <h2>Use the Tool Below</h2>
@@ -11,8 +17,8 @@
                     <div class="form-group" id="textinput">
                         <input class="form-control form-control-sm" type="text" name="text_title"
                             value="{{ text_title }}" placeholder="Enter Title" id="text_title" />
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter text"
-                            name="text_data" value="{{ text_data }}" rows="7"></textarea>
+                        <textarea id="text_data" class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Enter text" name="text_data" value="{{ text_data }}" rows="7"></textarea>
                     </div>
 
                     <div class="container">
@@ -61,28 +67,36 @@
                         </button>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <h2 id="analysisheading">TOPIC MODEL</h2>
-                </div>
                 <div class="row">
-
                     <table>
                         <tr>
                             <th>Sr no.</th>
                             <th>Keyword</th>
                         </tr>
+                        {%if keywords%}
                         {%for item in keywords%}
-                            <tr>
-                                <td>{{forloop.counter}}</td>
-                                <td>{{item}}</td>
-                            </tr>
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{item}}</td>
+                        </tr>
                         {%endfor%}
+                        {%endif%}
                     </table>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row text-center">
+                <h2 id="heading">TOPIC MODEL</h2>
+            </div>
+            <div class="row" id='topic-model-content'>
+                <img src="{% get_media_prefix %}images/wordcloud.png" id="topicmodel" alt="MY TOPIC MODEL">
+            </div>
+        </div>
+
     </div>
 </section>
-{%endblock content%} {%block scripts%}
-<script src="{%static 'js/tool.js'%}"></script>
+{%endblock content%}
+{%block scripts%}
+<script src="{%static 'js/tool2.js' %}"></script>
 {%endblock scripts%}
