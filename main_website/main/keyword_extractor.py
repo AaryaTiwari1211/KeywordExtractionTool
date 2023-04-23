@@ -9,10 +9,10 @@ import numpy as np
 import pandas as pd
 import networkx as nx
 from nltk.sentiment import SentimentIntensityAnalyzer
-from wordcloud import WordCloud, STOPWORDS
+
 from PIL import Image
 
-stopw = set(STOPWORDS)
+
 
 
 def build_vocabulary(page: list) -> list:
@@ -178,11 +178,4 @@ def extract_keywords(text):
     print(final_string)
     return final
 
-def wordcloud_generator(text):
-    text = extract_keywords(text)
-    convert_text = " ".join(str(item) for item in text)
-    word_cloud = WordCloud(stopwords=stopw, background_color="white", max_words=100,
-    contour_width=3, contour_color='steelblue', width=800, height=400, max_font_size=100, min_font_size=10, random_state=42
-    ).generate(convert_text)
-    img = word_cloud.to_file("media/images/wordcloud.png")
-    return img
+

@@ -21,14 +21,13 @@
                             <textarea id="text_data" class="form-control" placeholder="Enter text" name="text_data"
                                 value="{{ text_data }}" rows="7"></textarea>
                         </div>
-                        <div class="form-group" id="docinput">
+                        <!-- <div class="form-group" id="docinput">
                             <input class="form-control form-control-sm" type="text" name="doc_title"
                                 value="{{ doc_title }}" placeholder="Enter Title" id="text_title" />
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Default file input example</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" name="doc" value="{{ doc }}" id="formFile">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group" id="urlinput">
                             <input class="form-control form-control-sm" type="text" name="url_title"
                                 value="{{ url_title }}" placeholder="Enter Title" id="text_title" />
@@ -50,11 +49,11 @@
                             <div class="col-sm">
                                 <button type="button" class="btn" id="urlbtn">USE URL</button>
                             </div>
-                            <div class="col-sm">
+                            <!-- <div class="col-sm">
                                 <button type="button" class="btn" id="docbtn">
                                     <span>USE FILE</span>
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row">
                             {% if messages %} {% for message in messages %}
@@ -114,5 +113,6 @@
 </section>
 {%endblock content%}
 {%block scripts%}
-<script src="{%static 'js/tool2.js' %}"></script>
+<script src="{%static 'js/tool.js' %}"></script>
+
 {%endblock scripts%}
