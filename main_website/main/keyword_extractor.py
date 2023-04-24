@@ -159,16 +159,21 @@ def extract_keywords(text):
     print('ratios are: ')
     print(ratios)
 
-    degree
-
-    sorted_dict = {k: v for k, v in sorted(
-        ratios.items(), key=lambda item: item[1], reverse=True)}
+    sorted_dict = {k: v 
+                    for k, v in sorted(
+                        ratios.items(), key=lambda item: item[1], reverse=True)
+                }
     print('sorted: ')
     print(sorted_dict)
-
-    keywords_to_extract = len(sorted_dict) // 3
+    values_array = list(sorted_dict.values())
+    new_list = [i for i in values_array if i != 0]
+    print(new_list)
+    sorted_dict = my_dict = {k: v for k, v in sorted_dict.items() if v != 0}
+    keywords_to_extract = len(sorted_dict) 
+    
     print('keywords to extract: ')
     print(keywords_to_extract)
+    # print(sorted_dict)
 
     sort = list(sorted_dict)
     final = sort[:keywords_to_extract]
@@ -176,6 +181,6 @@ def extract_keywords(text):
     print(final)
     final_string = " ".join(str(item) for item in final)
     print(final_string)
-    return final
-
-
+    print(len(final))
+    print(len(new_list))
+    return final , new_list

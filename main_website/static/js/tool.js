@@ -60,7 +60,7 @@ urlbtn.onclick = () => {
 
 
 analysis_btn.onclick = () => {
-    heading.innerHTML = 'Close Analysis'
+    heading.innerHTML = 'Analysis'
 }
 
 algo_btn.onclick = () => {
