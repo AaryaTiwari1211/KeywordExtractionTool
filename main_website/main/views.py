@@ -1,28 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Text, Url, Document
-from .keyword_extractor import extract_keywords
+from .graph_generator import graph_generator
+# from .keyword_extractor import extract_keywords
+from .final_tool import extract_keywords
 from .wordcloud_generator import wordcloud_generator
 from .doctext_generator import doc_extractor
 from .urlextractor import url_keywords
 import matplotlib.pyplot as plt
-
-def line_graph_generator(key,freq):
-    plt.plot(key, freq)
-    plt.ylabel('Frequency')
-    plt.xlabel('Words')
-    plt.savefig("C:/Users/Aarya/OneDrive/Desktop/GITHUB/KeywordExtractionTool/main_website/media/graph.png")
-
-def bar_graph_generator(key,freq):
-    # fig = plt.figure(figsize = (10, 5))
-    plt.bar(key, freq, color ='maroon',width = 0.4)
-    plt.ylabel('Frequency')
-    plt.xlabel('Words')
-    plt.savefig("C:/Users/Aarya/OneDrive/Desktop/GITHUB/KeywordExtractionTool/main_website/media/bar.png")
+plt.switch_backend('agg')
 
 def index(request):
     return render(request, 'main/home.html')
-
 
 def tool(request):
     keywords = []
@@ -32,12 +21,12 @@ def tool(request):
     if request.method == 'POST' and request.POST['text_title'] != '' and request.POST['text_data'] != '':
         text_title = request.POST['text_title']
         text_data = request.POST['text_data']
-        img = wordcloud_generator(text_data)
-        keywords , frequency = extract_keywords(text_data)
+        wordcloud_generator(text_data)
+        keywords, frequency , dict = extract_keywords(text_data)
+        graph_generator(keywords,frequency)
         new_text = Text(text_title=text_title, text_data=text_data)
         new_text.save()
-        line_graph_generator(keywords,frequency)
-        bar_graph_generator(keywords,frequency)
+        
         context = {
             'keywords': keywords,
         }

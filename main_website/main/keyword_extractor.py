@@ -16,10 +16,8 @@ from PIL import Image
 
 
 def build_vocabulary(page: list) -> list:
-    '''
-    Builds vocabulary with all the words
-    present in the list page.
-    '''
+    # Builds vocabulary with all the words
+    # present in the list page.
     vocab = list(set(page))
     vocab.sort()
 
@@ -31,58 +29,40 @@ def build_vocabulary(page: list) -> list:
 
 def build_context(page: str, co_ocurrence_vectors: pd.DataFrame) -> pd.DataFrame:
     for index, element in enumerate(page):
-
         start = 0 if index-2 < 0 else index-2
         finish = len(page) if index+2 > len(page) else index+3
-
         context = page[start:index]+page[index+1:finish]
         for word in context:
             co_ocurrence_vectors.loc[element, word] = (
                 co_ocurrence_vectors.loc[element, word]+1)
-
     return co_ocurrence_vectors
 
 
 def extract_keywords(text):
     print(text)
     nlp = spacy.load("en_core_web_sm")
-
     doc = nlp(text)
-    doc
-
     len(text)
-
     len(doc)
-
     for ent in doc.ents:
         print(ent.text, ent.label_)
-
     stopwords = [w for w in doc if w.is_stop == True]
-    stopwords
 
     text2 = [w for w in doc if w.is_stop == False and w.pos_ != "PUNCT"]
-    text2
 
     delimiters = [w for w in doc if w.pos_ == "PUNCT"]
     delimiter = str(delimiters)
-    delimiter
 
     text3 = " ".join([token.lemma_ for token in text2])
     print(text3)
 
     keyword = str(text3).split()
-    keyword
 
     frequency = FreqDist(keyword)
     print(frequency.most_common())
 
     stopword = str(stopwords)
-    stopword
-
-    len(stopword)
-
     st = stopword.split()
-    st
 
     keylist = []
     keyword = list(frequency.keys())
@@ -113,7 +93,6 @@ def extract_keywords(text):
     for i in range(len(frequency_str)):
         frequency_str[i]
         print(frequency_str[16])
-
     g = nx.Graph()
 
     nodes = nlp(str(keylist))
@@ -133,18 +112,13 @@ def extract_keywords(text):
     for token in tokens:
         if token in keylist:
             scores[token] = sia.polarity_scores(token)["compound"]
-
     print(scores)
-
     ratios = {}
     degree = g.degree(nodes)
-    degree
     freq = list(dict(g.degree()).values()).count(degree)
     ratio = degree / freq
     ratios[nodes] = ratio
-
     print(ratios)
-
     degree = {word: frequency[word] for word in set(tokens)}
 
     # Calculate the degree-to-frequency ratio for each token
@@ -158,7 +132,7 @@ def extract_keywords(text):
     # Print the ratios
     print('ratios are: ')
     print(ratios)
-
+ 
     sorted_dict = {k: v 
                     for k, v in sorted(
                         ratios.items(), key=lambda item: item[1], reverse=True)
@@ -183,4 +157,4 @@ def extract_keywords(text):
     print(final_string)
     print(len(final))
     print(len(new_list))
-    return final , new_list
+    return final , new_list , sorted_dict
