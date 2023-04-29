@@ -61,8 +61,13 @@ def extract_keywords(text):
 
     for word in sorted(ratio, key=ratio.get, reverse=True):
         ratio_values.append(ratio[word])
-    
+
     print(ratio_values)
+
+    # if (len(ratio_values) >= 20):
+    #     ratio_values = ratio_values[:20]
+    # else:
+    #     ratio_values = ratio_values[:len(best_keywords)]
 
     keywords_to_extract = int(len(ratio))
     print(keywords_to_extract)
@@ -71,14 +76,21 @@ def extract_keywords(text):
         :keywords_to_extract]
     print(best_keywords)
 
+    # if (len(best_keywords) >= 20):
+    #     best_keywords = best_keywords[:20]
+    # else:
+    #     best_keywords = best_keywords[:len(best_keywords)]
+
     # final_ratio = sorted(ratio , key=ratio.get , reverse=True)
     print(ratio)
     # sorted_dict = sorted(ratio.items(),key=lambda kv: kv[1],reverse=True)
-    sorted_dict = dict(sorted(ratio.items(),key=lambda kv: kv[1],reverse=True))
+    sorted_dict = dict(
+        sorted(ratio.items(), key=lambda kv: kv[1], reverse=True))
     print(sorted_dict)
     for final in best_keywords:
         print(final)
 
     return best_keywords, ratio_values, sorted_dict
+
 
 extract_keywords("The Republic of Azerbaijan’s Religion Law and Administrative Code amendments of 2021 and 2022; how will this further suppress Christianity in the Caucasus? Aliyev’s autocratic regime is")

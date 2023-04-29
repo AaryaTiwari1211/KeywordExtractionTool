@@ -36,9 +36,9 @@ def tool(request):
         url_title = request.POST['url_title']
         url = request.POST['url']
         url_text = url_keywords(url)
-        img = wordcloud_generator(url_text)
-        keywords = extract_keywords(url_text)
-
+        keywords, frequency , dict = extract_keywords(url_text)
+        wordcloud_generator(url_text)
+        graph_generator(keywords,frequency)
         new_url = Url(url_title=url_title, url=url)
         new_url.save()
 
@@ -56,3 +56,4 @@ def nlp(request):
 
 def about(request):
     return render(request, 'main/about.html')
+
