@@ -1,10 +1,19 @@
 from django.db import models
 
 
+# class Text(models.Model):
+    
+#     text_title = models.CharField(max_length=20,primary_key=True)
+#     text_data = models.TextField(max_length=1000000)
+#     graph = models.ImageField(upload_to="images",null=True)
+#     wordcloud  = models.ImageField(upload_to="images",null=True)
+    
+#     def __str__(self):
+#         return self.text_title
+
 class Text(models.Model):
-    text_title = models.CharField(max_length=20)
+    text_title = models.CharField(max_length=20 , primary_key=True)
     text_data = models.TextField(max_length=1000000)
-    # wordcloud = models.ImageField(upload_to="media/images")
     
     def __str__(self):
         return self.text_title

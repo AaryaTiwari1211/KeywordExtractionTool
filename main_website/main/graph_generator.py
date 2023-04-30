@@ -15,5 +15,5 @@ def graph_generator(key,freq):
     
     for tick2 in ax2.get_xticklabels():
         tick2.set_rotation(63)
-    
-    fig.savefig("C:/Users/Aarya/OneDrive/Desktop/GITHUB/KeywordExtractionTool/main_website/media/images/graph.png")
+        
+    fig.savefig("media/images/graph.png")
