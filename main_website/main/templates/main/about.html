@@ -1,16 +1,107 @@
-{%extends 'main/index.html'%}
-{%load static%}
-{% block content%}
+{%extends 'main/index.html'%} {%load static%} {% block content%}
 
-<div class="container">
-    <h1>
-        About us
-    </h1>
-</div>
-<div class="about">
-    <p>We are students from K.J. Somaiya College of Engineering enrolled in B.Tech in Information Technology, SY.</p>
-</div>
+<section id="info-text">
+    <h2>About Us</h2>
+    <div class="container w-100">
+        <div class="row align-items-center">
+            <div class="col m-5 text-center">
+                <p>
+                    <b>
+                        We are a team of five passionate college students who have developed 
+                        a Topic Modelling Website. Our goal is to make topic modelling 
+                        accessible and easy for everyone, regardless of their technical
+                        background or expertise.
+                        <br>
+                    </b>
+                </p>
+            </div>
+            <div class="col m-5 text-center">
+                <img src="{% get_media_prefix %}images/pratham1.png" width="400px" height="300px">
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col m-5 text-center">
+                <img src="{% get_media_prefix %}images/pratham2.png" width="400px" height="300px">
+            </div>
+            <div class="col m-5 text-center">
+                <p>
+                    <b>
+                        Our team comprises students from similar academic backgrounds, 
+                        which is computer science.We have
+                        leveraged our individual skills and expertise to create a website 
+                        that is user-friendly, efficient, and accurate.
+                        <br>
+                    </b>
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col m-5 text-center">
+                <p>
+                    <b>
+                        Our website offers a range of features that enable users to analyze and 
+                        visualize their text data easily. Our user-friendly interface allows 
+                        users to upload their text data, select the parameters for analysis, 
+                        and visualize the results in an intuitive manner.
+                        <br>
+                    </b>
+                </p>
+            </div>
+            <div class="col m-5 text-center">
+                <img src="{% get_media_prefix %}images/shri1.png" width="400px" height="300px">
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col m-5 text-center">
+                <img src="{% get_media_prefix %}images/aarya1.png" width="400px" height="300px">
+            </div>
+            <div class="col m-5 text-center">
+                <p>
+                    <b>
+                        We have incorporated several topic modelling algorithms, 
+                        including LDA and RAKE, to ensure that users have access 
+                        to a range of options to suit their needs. Our algorithms 
+                        have been fine-tuned and tested to ensure accuracy and 
+                        efficiency in topic modelling.
+                        <br>
+                    </b>
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col m-5 text-center">
+                <p>
+                    <b>
+                        At the heart of our project is the belief that topic modelling 
+                        can be a powerful tool for researchers, businesses, and individuals 
+                        to gain insights from their text data. Our website offers an 
+                        easy-to-use platform to achieve this goal.
+                        <br>
+                    </b>
+                </p>
+            </div>
+            <div class="col m-5 text-center">
+                <img src="{% get_media_prefix %}images/shri2.png" width="400px" height="300px">
+            </div>
+        </div>
+        <div class="row align-items-center m-3">
+            <div class="col m-5 text-center">
+                <img src="{% get_media_prefix %}images/pratham3.png" width="400px" height="300px">
+            </div>
+            <div class="col m-5 text-center">
+                <p>
+                    <b>
+                        We are excited about the potential of our project and are committed 
+                        to continually improving and expanding our website to meet the needs 
+                        of our users. We believe that our website can help individuals and 
+                        organizations make sense of their text data and unlock valuable 
+                        insights that can drive growth and innovation.
+                        <br>
+                    </b>
+                </p>
+            </div>
+        </div>
+    </div>
+    </section>
 
-{% endblock content %}
-{%block scripts%}
-{%endblock scripts%}
+{% endblock content %} {%block scripts%} {%endblock scripts%}

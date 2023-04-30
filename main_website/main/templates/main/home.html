@@ -2,77 +2,63 @@
 {%load static%}
 {% block content%}
 <section id="info-text">
-    <h2>Extract Your Keywords and additional features</h2>
+    <h2>Topic Modelling , Keyword Extraction and Graphical Visualization</h2>
     <div class="container">
-        <div class="row mt-2 mb-2 align-items-center">
-            <div class="col-lg ">
-                <p>
-                    <b>
-                    Keyword extraction is the automated process of extracting the most
-                    relevant words and expressions from text. But how can you use it to
-                    leverage existing business data? Read this guide from start to finish,
-                    bookmark it for later, or jump to the topics that grab your attention:
-                    </b>
-                </p>
-            </div>
-            <div class="col-lg ">
-                <p>
-                    <b>
-                    Keyword extraction uses machine learning artificial intelligence (AI)
-                    with natural language processing (NLP) to break down human language so
-                    that it can be understood and analyzed by machines. It’s used to find
-                    keywords from all manner of text: regular documents and business
-                    reports, social media comments, online forums and reviews, news reports,
-                    and more.
-                    <b>
-                </p>
-            </div>
+        <div class="row">
+            <p>
+                <b>
+                    Topic modelling is a popular technique in natural language processing 
+                    (NLP) that involves identifying the underlying topics or themes 
+                    present in a corpus of text. One of the commonly used algorithms 
+                    for topic modelling is the Rapid Automatic Keyword Extraction (RAKE) 
+                    algorithm. RAKE is a statistical method that identifies relevant 
+                    keywords in text by analyzing the frequency and co-occurrence
+                    patterns of words.
+                    <br>
+                </b>
+            </p>
+        </div>
+        <div class="row">
+            <p>
+                <b>
+                    The RAKE algorithm is implemented in R programming language and 
+                    can be used for topic modelling in the following steps:
+                </b>
+            </p>
         </div>
         <div class="view">
             <button id="viewmore">View More</button>
         </div>
         <div class="show-hide" id="showhide">
-        <div class="row">
-            <div class="col-lg ">
+            <div class="row">
                 <p>
                     <b>
-                        The realm of keyword extraction is complex and one can 
-                        easily be overcome with confusing terminology. ‘Key phrases’, 
-                        ‘key terms’, ‘key segments’ and ‘keywords’ for instance are the 
-                        terminology used for defining the most relevant information contained 
-                        in a document. Although the terminology is different, the function is the
-                        same: characterization of the topic discussed in a document.
+                        1. Data preprocessing: The first step in topic modelling using the RAKE algorithm is to preprocess the text data. This includes removing stop words, stemming, and converting the text to lowercase.
+                        <br>
+                        <br>
+                        2. Tokenization: Next, the text data is tokenized into individual words, and their frequency is calculated.
+                        <br>
+                        <br>
+                        3. Candidate keyword extraction: In this step, candidate keywords are identified by splitting the text into phrases based on punctuation marks and identifying phrases with high word frequency and density.
+                        <br>
+                        <br>
+                        4. Keyword score calculation: A score is assigned to each candidate keyword based on the frequency and co-occurrence of words in the phrase. The score is calculated by dividing the number of word occurrences in the phrase by the total number of words in the phrase.
+                        <br>
+                        <br>
+                        5. Topic extraction: The final step in topic modelling using RAKE is to extract the top-ranked keywords from the corpus. These keywords are then used to identify the underlying topics or themes in the corpus.
+                        <br>
+                        <br>
                     </b>
                 </p>
             </div>
-            <div class="col-lg ">
+            <div class="row">
                 <p>
                     <b>
-                        Keyword extraction methods can be roughly divided into:<br>
-                        <br>
-                        1. Keyword assignment<br>
-                        Choosing keywords from a list of controlled vocabulary or taxonomy.<br>
-                        <br>
-                        
-                        2. Keyword extraction<br>
-                        Keywords are chosen from words that are explicitly mentioned in an original text.
-                        <br>
-                    <b>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg ">
-                <p>
-                    <b>
-                    Keyword extraction is the automated process of extracting the most
-                    relevant words and expressions from text. But how can you use it to
-                    leverage existing business data? Read this guide from start to finish,
-                    bookmark it for later, or jump to the topics that grab your attention:
+                        The RAKE algorithm is known for its simplicity and effectiveness in extracting relevant keywords from text data. However, it has some limitations, such as its inability to capture semantic relationships between words and its dependence on punctuation marks for identifying phrases. Nonetheless, it remains a useful tool for topic modelling and keyword extraction in NLP.
                     </b>
                 </p>
             </div>
-            <div class="col-lg ">
+            <div class="row">
                 <p>
                     <b>
                     Keyword extraction uses machine learning artificial intelligence (AI)
@@ -84,55 +70,13 @@
                     <b>
                 </p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg ">
+            <div class="row">
                 <p>
                     <b>
-                    Keyword extraction is the automated process of extracting the most
-                    relevant words and expressions from text. But how can you use it to
-                    leverage existing business data? Read this guide from start to finish,
-                    bookmark it for later, or jump to the topics that grab your attention:
-                    </b>
-                </p>
-            </div>
-            <div class="col-lg ">
-                <p>
-                    <b>
-                    Keyword extraction uses machine learning artificial intelligence (AI)
-                    with natural language processing (NLP) to break down human language so
-                    that it can be understood and analyzed by machines. It’s used to find
-                    keywords from all manner of text: regular documents and business
-                    reports, social media comments, online forums and reviews, news reports,
-                    and more.
+                        In conclusion, RAKE algorithm is a useful tool for topic modelling that works by extracting relevant keywords from text data. It is implemented in R programming language and involves several steps, including data preprocessing, tokenization, candidate keyword extraction, keyword score calculation, and topic extraction. While it has some limitations, it is a useful technique for identifying the underlying themes and topics in a corpus of text.
                     <b>
                 </p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg ">
-                <p>
-                    <b>
-                    Keyword extraction is the automated process of extracting the most
-                    relevant words and expressions from text. But how can you use it to
-                    leverage existing business data? Read this guide from start to finish,
-                    bookmark it for later, or jump to the topics that grab your attention:
-                    </b>
-                </p>
-            </div>
-            <div class="col-lg">
-                <p>
-                    <b>
-                    Keyword extraction uses machine learning artificial intelligence (AI)
-                    with natural language processing (NLP) to break down human language so
-                    that it can be understood and analyzed by machines. It’s used to find
-                    keywords from all manner of text: regular documents and business
-                    reports, social media comments, online forums and reviews, news reports,
-                    and more.
-                    <b>
-                </p>
-            </div>
-        </div>
     </div>
     </div>
 </section>
