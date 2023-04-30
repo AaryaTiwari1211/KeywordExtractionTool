@@ -1,7 +1,6 @@
 var textinput = document.getElementById('textinput')
 var urlinput = document.getElementById('urlinput')
 var fileinput = document.getElementById('fileinput')
-// var docinput = document.getElementById('docinput')
 
 var left_heading = document.getElementById('inputheading')
 
@@ -17,6 +16,7 @@ var word_cloud_btn = document.getElementById('wordcloudbtn')
 
 var topic_model = document.getElementById('topicmodel')
 var graph = document.getElementById('generated-graph')
+var algorithm = document.getElementById('algorithm')
 var heading = document.getElementById('heading')
 
 var word_cloud_displayer = false
@@ -74,10 +74,19 @@ analysis_btn.onclick = () => {
         analysis_displayer = false
     }
 }
-
 algo_btn.onclick = () => {
-    heading.innerHTML = 'View Algorithm'
+    if (!algorithm_displayer) {
+        heading.innerHTML = 'Algorithm'
+        algorithm.style.display = 'block'
+        algorithm_displayer = true
+    }
+    else {
+        heading.innerHTML = 'Topic Model'
+        algorithm.style.display = 'none'
+        algorithm_displayer = false
+    }
 }
+
 word_cloud_btn.onclick = () => {
     if (!word_cloud_displayer) {
         heading.innerHTML = 'Word Cloud'

@@ -6,6 +6,11 @@
     margin:50px;
 }
 
+#algorithm{
+    font-family:"Courier New" , sans-serif;
+    display:none;
+}
+
 #topic-model-content{
     display: flex;
     justify-content: center;
