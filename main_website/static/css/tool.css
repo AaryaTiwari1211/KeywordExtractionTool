@@ -1,6 +1,9 @@
 #topicmodel,
 #generated-graph{
     display: none;
+    width:100%;
+    height:60vh;
+    margin:50px;
 }
 
 #topic-model-content{
@@ -9,14 +12,17 @@
     align-items:center;
 }
 
-#urlinput ,
-#docinput{
+#urlinput,
+#fileinput{
     display: none;
 }
 
-#topicmodel,
-#generated-graph{
-    width:100%;
-    height:60vh;
-    margin:50px;
+#formFile{
+    width:400px;
+}
+#fileinput{
+    /* text-align:center; */
+    align-items:center;
+    justify-content:center;
+
 }

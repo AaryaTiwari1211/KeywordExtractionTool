@@ -177,7 +177,8 @@ body{
 }
 #tool .col-sm .btn{
     position: relative;
-    transition: 0.5s;
+    font-size:13px;
+    transition: 0.5s all;
 }
 table, th, td {
     border: 1px solid black;
@@ -190,7 +191,7 @@ table, th, td {
 #urlbtn,
 #textbtn,
 #webbtn{
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 #tool .col-sm .btn::before,

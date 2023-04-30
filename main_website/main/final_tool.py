@@ -92,5 +92,3 @@ def extract_keywords(text):
 
     return best_keywords, ratio_values, sorted_dict
 
-
-extract_keywords("The Republic of Azerbaijan’s Religion Law and Administrative Code amendments of 2021 and 2022; how will this further suppress Christianity in the Caucasus? Aliyev’s autocratic regime is")

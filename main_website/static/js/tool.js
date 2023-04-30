@@ -1,11 +1,13 @@
 var textinput = document.getElementById('textinput')
 var urlinput = document.getElementById('urlinput')
+var fileinput = document.getElementById('fileinput')
 // var docinput = document.getElementById('docinput')
 
 var left_heading = document.getElementById('inputheading')
+
 var textbtn = document.getElementById('textbtn')
 var urlbtn = document.getElementById('urlbtn')
-// var docbtn = document.getElementById('docbtn')
+var filebtn = document.getElementById('filebtn')
 
 var image = document.getElementById('wordcloud')
 
@@ -18,18 +20,22 @@ var graph = document.getElementById('generated-graph')
 var heading = document.getElementById('heading')
 
 var word_cloud_displayer = false
-var url_displayer = false
 var analysis_displayer = false
-var text_displayer = true
+var algorithm_displayer = false
 
+var text_displayer = true
+var file_displayer = false
+var url_displayer = false
 
 textbtn.onclick = () => {
     if (!text_displayer) {
         left_heading.innerHTML = 'Text Input'
         textinput.style.display = 'block'
         urlinput.style.display = 'none'
+        fileinput.style.display = 'none'
         text_displayer = true
         url_displayer = false
+        file_displayer = false
     }
 }
 urlbtn.onclick = () => {
@@ -37,21 +43,23 @@ urlbtn.onclick = () => {
         left_heading.innerHTML = 'URL Input'
         urlinput.style.display = 'block'
         textinput.style.display = 'none'
+        fileinput.style.display = 'none'
         url_displayer = true
         text_displayer = false
+        file_displayer = false
     }
 }
-// docbtn.onclick = () => {
-//     if (!displayer3) {
-//         left_heading.innerHTML = 'Document Input'
-//         docinput.style.display = 'block'
-//         textinput.style.display = 'none'
-//         urlinput.style.display = 'none'
-//         displayer3 = true
-//         displayer1 = false
-//         displayer2 = false
-//     }
-// }
+filebtn.onclick = () => {
+    if (!file_displayer) {
+        left_heading.innerHTML = 'TXT File Input'
+        fileinput.style.display = 'block'
+        textinput.style.display = 'none'
+        urlinput.style.display = 'none'
+        url_displayer = false
+        text_displayer = false
+        file_displayer = true
+    }
+}
 
 
 analysis_btn.onclick = () => {

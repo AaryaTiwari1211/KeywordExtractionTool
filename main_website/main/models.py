@@ -12,12 +12,10 @@ class Text(models.Model):
 class Url(models.Model):
     url_title = models.CharField(max_length=20)
     url = models.URLField(max_length=200)
-    
     def __str__(self):
         return self.url_title
 
 class Document(models.Model):
-    doc_title = models.CharField(max_length=20)
     doc = models.FileField(upload_to='files/')
     def __str__(self):
-        return self.doc_title
+        return self.doc
