@@ -6,4 +6,6 @@ urlpatterns = [
     path('tool/',views.tool,name='tool'),
     path('about/',views.about,name='about'),
     path('nlp/',views.nlp,name='nlp'),
+    path('graphs/',views.graph,name='graph'),
+    path('algorithm/',views.algorithm,name='algorithm'),
 ]

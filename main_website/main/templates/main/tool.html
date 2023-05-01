@@ -108,99 +108,44 @@
           </div>
         </div>
         <div class="row">
-          <table>
-            <tr>
-              <th>Sr no.</th>
-              <th>Keyword</th>
-            </tr>
-            {%if keywords%} {%for item in keywords%}
+          <img
+          src="{% get_media_prefix %}images/wordcloud.png"
+          id="topicmodel"
+          alt="MY TOPIC MODEL"
+        />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row text-center justify-content-center">
+        <h2 id="heading">KEYWORDS</h2>
+        <table class="w-50">
+          <tr>
+            <th>Sr no.</th>
+            <th>Keyword</th>
+          </tr>
+          {% if keywords %}
+          {% for item in keywords|slice:":50" %}
             <tr>
               <td>{{forloop.counter}}</td>
               <td>{{item}}</td>
             </tr>
-            {%endfor%} {%endif%}
-          </table>
+          {% endfor %}
+        {% endif %}
+        </table>
+      </div>
+        <div class="row w-50 text-center justify-content-center">
         </div>
-      </div>
-    </div>
-    <div class="container mt-5" id="algorithm">
-      <div class="row">
-        <p>
-          <b>
-            The RAKE (Rapid Automatic Keyword Extraction) algorithm is a popular algorithm used for automated keyword 
-            extraction from text documents. Here are the steps involved in the RAKE algorithm:
-            <br>
-            <br>
-          </b>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <b>
-            1. Text Preprocessing: The first step is to preprocess the text by removing all the stopwords and punctuations. 
-            Stopwords are common words in a language that do not add any value to the text and can be safely ignored.
-          </b>
-          <br>
-          <br>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <b>
-            2. Phrase Candidate Identification: In this step, we identify the candidate phrases from the preprocessed text. 
-            The algorithm considers any sequence of non-stopwords as a potential phrase candidate.
-          </b>
-          <br>
-          <br>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <b>
-            3. Phrase Score Calculation: The next step is to calculate the score of each candidate phrase based on its degree 
-            of association with the other phrases in the text. The score is calculated using two metrics: word frequency 
-            and degree.
-          </b>
-          <br>
-          <br>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <b>
-            4. Keyword Extraction: Finally, the algorithm extracts the top N highest-scoring phrases as the keywords for the text. 
-            N is typically a user-defined parameter.
-          </b>
-          <br>
-          <br>
-        </p>
-      </div>
-      <div class="row">
-        <p>
-          <b>
-            Overall, the RAKE algorithm is a simple but effective way to extract keywords from text documents. It is widely 
-            used in natural language processing applications such as text classification, topic modeling, and search engine 
-            optimization.
-          </b>
-          <br>
-          <br>
-        </p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row text-center">
-        <h2 id="heading">TOPIC MODEL</h2>
-      </div>
       <div
         class="row justify-content-center align-content-center text-center"
         id="topic-model-content"
       >
         <div class="row">
-          <img
+          {% comment %} <img
             src="{% get_media_prefix %}images/wordcloud.png"
             id="topicmodel"
             alt="MY TOPIC MODEL"
-          />
+          /> {% endcomment %}
         </div>
         <div class="row">
           <img
@@ -216,5 +161,4 @@
 </section>
 {%endblock content%} {%block scripts%}
 <script src="{%static 'js/tool.js' %}"></script>
-
 {%endblock scripts%}

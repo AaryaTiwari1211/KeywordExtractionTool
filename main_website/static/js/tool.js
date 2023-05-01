@@ -63,38 +63,18 @@ filebtn.onclick = () => {
 
 
 analysis_btn.onclick = () => {
-    if (!analysis_displayer) {
-        heading.innerHTML = 'Analysis'
-        graph.style.display = 'block'
-        analysis_displayer = true
-    }
-    else {
-        heading.innerHTML = 'Topic Model'
-        graph.style.display = 'none'
-        analysis_displayer = false
-    }
+    window.location.href = "http://127.0.0.1:8000/graphs/"
 }
 algo_btn.onclick = () => {
-    if (!algorithm_displayer) {
-        heading.innerHTML = 'Algorithm'
-        algorithm.style.display = 'block'
-        algorithm_displayer = true
-    }
-    else {
-        heading.innerHTML = 'Topic Model'
-        algorithm.style.display = 'none'
-        algorithm_displayer = false
-    }
+    window.location.href = "http://127.0.0.1:8000/algorithm/"
 }
 
 word_cloud_btn.onclick = () => {
     if (!word_cloud_displayer) {
-        heading.innerHTML = 'Word Cloud'
         topic_model.style.display = 'block'
         word_cloud_displayer = true
     }
     else {
-        heading.innerHTML = 'Topic Model'
         topic_model.style.display = 'none'
         word_cloud_displayer = false
     }

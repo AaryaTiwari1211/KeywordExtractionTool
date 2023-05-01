@@ -1,0 +1,77 @@
+{%extends 'main/index.html'%} {%load static%} {% block css %}
+<link rel="stylesheet" href="{% static 'css/algorithm.css' %}" />
+{% endblock css %} {% block content%}
+<div class="container mt-5" id="algorithm-text">
+  <div class="row">
+    <p>
+      <b>
+        The RAKE (Rapid Automatic Keyword Extraction) algorithm is a popular
+        algorithm used for automated keyword extraction from text documents.
+        Here are the steps involved in the RAKE algorithm:
+        <br />
+        <br />
+      </b>
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <b>
+        1. Text Preprocessing: The first step is to preprocess the text by
+        removing all the stopwords and punctuations. Stopwords are common words
+        in a language that do not add any value to the text and can be safely
+        ignored.
+      </b>
+      <br />
+      <br />
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <b>
+        2. Phrase Candidate Identification: In this step, we identify the
+        candidate phrases from the preprocessed text. The algorithm considers
+        any sequence of non-stopwords as a potential phrase candidate.
+      </b>
+      <br />
+      <br />
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <b>
+        3. Phrase Score Calculation: The next step is to calculate the score of
+        each candidate phrase based on its degree of association with the other
+        phrases in the text. The score is calculated using two metrics: word
+        frequency and degree.
+      </b>
+      <br />
+      <br />
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <b>
+        4. Keyword Extraction: Finally, the algorithm extracts the top N
+        highest-scoring phrases as the keywords for the text. N is typically a
+        user-defined parameter.
+      </b>
+      <br />
+      <br />
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <b>
+        Overall, the RAKE algorithm is a simple but effective way to extract
+        keywords from text documents. It is widely used in natural language
+        processing applications such as text classification, topic modeling, and
+        search engine optimization.
+      </b>
+      <br />
+      <br />
+    </p>
+  </div>
+</div>
+{%endblock content%} {%block scripts%} {% comment %}
+<script src="{%static 'js/home.js'%}"></script>
+{% endcomment %} {%endblock scripts%}

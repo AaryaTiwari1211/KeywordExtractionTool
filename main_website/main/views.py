@@ -34,7 +34,7 @@ def tool(request):
             'keywords': keywords,
         }
         messages.success(
-            request, f'Your text has been processed and keywords are in the right ->!')
+            request, f'Your text has been processed and keywords are down below ->!')
     elif request.method == 'POST' and request.POST['url_title'] != '' and request.POST['url'] != '':
         url_title = request.POST['url_title']
         url = request.POST['url']
@@ -49,7 +49,7 @@ def tool(request):
             'keywords': keywords,
         }
         messages.success(
-            request, f'Your text has been processed and keywords are in the right ->!')
+            request, f'Your text has been processed and keywords are down below ->!')
     elif request.method == 'POST' and request.POST['text_title'] == '' and request.POST['text_data'] == '' and request.POST['url_title'] == '' and request.POST['url'] == '':
         txtfile = request.FILES['txtfile']
         if txtfile.name.endswith(".txt"):
@@ -65,13 +65,18 @@ def tool(request):
             'keywords': keywords,
         }
         messages.success(
-            request, f'Your text has been processed and keywords are in the right ->!')
+            request, f'Your text has been processed and keywords are down below ->!')
     return render(request, 'main/tool.html', context)
-
 
 def nlp(request):
     return render(request, 'main/nlp.html')
 
-
 def about(request):
     return render(request, 'main/about.html')
+
+
+def graph(request):
+    return render(request, 'main/graphs.html')
+
+def algorithm(request):
+    return render(request, 'main/algorithm.html')

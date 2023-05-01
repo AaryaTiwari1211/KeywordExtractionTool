@@ -2,8 +2,8 @@
 #generated-graph{
     display: none;
     width:100%;
-    height:60vh;
-    margin:50px;
+    height:50vh;
+    /* margin:50px; */
 }
 
 #algorithm{
@@ -29,5 +29,4 @@
     /* text-align:center; */
     align-items:center;
     justify-content:center;
-
 }
