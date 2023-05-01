@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='text',
             name='wordcloud',
-            field=models.ImageField(default=django.utils.timezone.now, upload_to='images/'),
+            field=models.ImageField(default=1, upload_to='images/'),
             preserve_default=False,
         ),
     ]
