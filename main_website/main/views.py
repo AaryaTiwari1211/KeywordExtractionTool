@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.cache import cache
 import PyPDF2
 import os
 import docx
@@ -24,6 +25,7 @@ def tool(request):
     context = {}
     doc = request.FILES
     if request.method == 'POST' and request.POST['text_title'] != '' and request.POST['text_data'] != '':
+        cache.clear()
         text_title = request.POST['text_title']
         text_data = request.POST['text_data']
         wordcloud_generator(text_data)

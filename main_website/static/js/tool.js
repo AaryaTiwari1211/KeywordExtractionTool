@@ -8,6 +8,8 @@ var textbtn = document.getElementById('textbtn')
 var urlbtn = document.getElementById('urlbtn')
 var filebtn = document.getElementById('filebtn')
 
+var extractbtn = document.getElementById("extractbtn")
+
 var image = document.getElementById('wordcloud')
 
 var analysis_btn = document.getElementById('analysisbtn')
@@ -61,22 +63,49 @@ filebtn.onclick = () => {
     }
 }
 
+extractbtn.onclick = () => {
+    sessionStorage.setItem("wordcloud" , "Aarya")
+    sessionStorage.setItem("graph" , "Pratham")
+}
 
 analysis_btn.onclick = () => {
-    window.location.href = "http://127.0.0.1:8000/graphs/"
+    var seshstorage = sessionStorage.getItem("graph")
+    if (seshstorage === null) {
+        console.log("Graph not generated!!")
+    }
+    else 
+    {
+        graph.style.display = 'block'
+        window.location.href = "http://127.0.0.1:8000/graphs/"
+    }
 }
 algo_btn.onclick = () => {
     window.location.href = "http://127.0.0.1:8000/algorithm/"
 }
 
 word_cloud_btn.onclick = () => {
-    if (!word_cloud_displayer) {
-        topic_model.style.display = 'block'
-        word_cloud_displayer = true
+    var sstorage = sessionStorage.getItem("wordcloud")
+    console.log(sstorage)
+    // if (!word_cloud_displayer) {
+    //     topic_model.style.display = 'block'
+    //     word_cloud_displayer = true
+    // }
+    // else {
+    //     topic_model.style.display = 'none'
+    //     word_cloud_displayer = false
+    // }
+    if (sstorage === null) {
+        console.log("Image not generated!!")
     }
-    else {
-        topic_model.style.display = 'none'
-        word_cloud_displayer = false
+    else 
+    {
+        if (!word_cloud_displayer) {
+            topic_model.style.display = 'block'
+            word_cloud_displayer = true
+        }
+        else {
+            topic_model.style.display = 'none'
+            word_cloud_displayer = false
+        }
     }
-
 }
