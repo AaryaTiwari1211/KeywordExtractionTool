@@ -1,7 +1,9 @@
-from django.conf import settings
+import docx
 
-def doc_extractor(file):
-    document = open("C:/Users/Aarya/OneDrive/Desktop/GITHUB/KeywordExtractionTool/main_website/media/files/" + file, 'r')
-    doc_text = document.read()
-    return doc_text
+def extract_text_from_docx(file):
+    doc = docx.Document(file)
+    full_text = []
+    for para in doc.paragraphs:
+        full_text.append(para.text)
+    return '\n'.join(full_text)
 

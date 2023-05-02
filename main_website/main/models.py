@@ -24,7 +24,12 @@ class Url(models.Model):
     def __str__(self):
         return self.url_title
 
+# class Document(models.Model):
+#     doc = models.FileField(upload_to='files/')
+#     def __str__(self):
+#         return self.doc
+
 class Document(models.Model):
-    doc = models.FileField(upload_to='files/')
+    doc = models.CharField(max_length=10000000)
     def __str__(self):
         return self.doc
